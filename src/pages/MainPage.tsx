@@ -4,8 +4,14 @@ import { IoIosCode } from "react-icons/io";
 import { RiPaletteLine } from "react-icons/ri";
 
 export default function MainPage() {
-  const dummyData = {
+  const dummyData1 = {
     title: "기본 드롭다운",
+    placeholder: "옵션을 선택하세요",
+    options: [{ text: "옵션 1" }, { text: "옵션 2" }, { text: "옵션 3" }],
+  };
+
+  const dummyData2 = {
+    title: "아이콘 드롭다운",
     placeholder: "카테고리를 선택하세요",
     options: [
       { text: "스터디", icon: <RiBookLine /> },
@@ -14,16 +20,31 @@ export default function MainPage() {
     ],
     xButton: true,
   };
+
   return (
-    <>
-      <div className="w-full flex justify-center my-19">
+    <div className="w-full flex flex-col gap-20 justify-center my-20">
+      <div className="flex gap-20">
         <DropDown
-          title={dummyData.title}
-          placeholder={dummyData.placeholder}
-          options={dummyData.options}
-          xButton={dummyData.xButton}
+          size="sm"
+          title={dummyData1.title}
+          placeholder={dummyData1.placeholder}
+          options={dummyData1.options}
+        />
+        <DropDown
+          title={dummyData2.title}
+          placeholder={dummyData2.placeholder}
+          options={dummyData2.options}
+          xButton={dummyData2.xButton}
         />
       </div>
-    </>
+      <div>
+        <DropDown
+          title={dummyData2.title}
+          placeholder={dummyData2.placeholder}
+          options={dummyData2.options}
+          xButton={dummyData2.xButton}
+        />
+      </div>
+    </div>
   );
 }
