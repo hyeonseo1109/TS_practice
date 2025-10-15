@@ -9,7 +9,7 @@ interface Option {
   icon?: React.ReactNode;
 }
 
-interface DropDownProps {
+export interface DropDownProps {
   title: string;
   placeholder: string;
   options: Option[];
