@@ -22,8 +22,8 @@ export default function MainPage() {
   };
 
   return (
-    <div className="w-full flex flex-col gap-20 justify-center my-20">
-      <div className="flex gap-20">
+    <div className="flex flex-col gap-20 m-10 ">
+      <div className="flex flex-col gap-20">
         <DropDown
           size="sm"
           title={dummyData1.title}
@@ -39,6 +39,7 @@ export default function MainPage() {
       </div>
       <div>
         <DropDown
+          size="lg"
           title={dummyData2.title}
           placeholder={dummyData2.placeholder}
           options={dummyData2.options}

@@ -25,7 +25,8 @@ export function DropDown({
   xButton = false,
   size = "md",
 }: DropDownProps) {
-  const [dropDownState, setDropDownState] = useState(false);
+  const [dropDownState, setDropDownState] = useState<boolean>(false);
+  const [selectedOption, setSelectedOption] = useState<string>();
 
   const sizeStyles = {
     sm: {
@@ -56,7 +57,11 @@ export function DropDown({
           <p className="font-[500] text-[1.125rem] text-center">{title}</p>
           <span>{xButton && <VscChromeClose />}</span>
         </div>
-        <div className="relative">
+        <div
+          tabIndex={0}
+          onBlur={() => setDropDownState(false)}
+          className="relative"
+        >
           <div
             onClick={() => setDropDownState(!dropDownState)}
             className={`flex ${currentSize.dropDown} ${
@@ -66,7 +71,7 @@ export function DropDown({
             }`}
           >
             <p className="text-[.875rem] text-gray-500 font-light">
-              {placeholder}
+              {selectedOption || placeholder}
             </p>
             {dropDownState ? (
               <FaAngleUp size={15} color="gray" />
@@ -76,10 +81,16 @@ export function DropDown({
           </div>
           {dropDownState && (
             <div
-              className={`bg-white border-[.0938rem] border-gray-200 rounded-lg shadow-[0_0.25rem_0.5rem_#00000020] absolute top-[${currentSize.height}] ${currentSize.dropDown}`}
+              className={`bg-white border-[.0938rem] border-gray-200 rounded-lg shadow-[0_0.25rem_0.5rem_#00000020] absolute top-[${currentSize.height}] ${currentSize.dropDown} `}
             >
               {options?.map((option) => (
                 <div
+                  key={option.text}
+                  onMouseDown={(e) => e.preventDefault()}
+                  onClick={() => {
+                    setDropDownState(false);
+                    setSelectedOption(option.text);
+                  }}
                   className={`flex items-center ${currentSize.dropDown} ${
                     currentSize.height
                   } px-[1.0625rem] py-[.8125rem] font-light hover:bg-gray-50 active:bg-gray-100
