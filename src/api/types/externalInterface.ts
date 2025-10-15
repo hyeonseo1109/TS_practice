@@ -1,9 +1,7 @@
 export type NewsCategory =
-  | "politics"
-  | "economy"
-  | "society"
-  | "culture"
-  | "sports";
+  // union값은 type만 가능하고 interface는 불가능함.
+  // 객체 구조는 interface로, 그 외의 union / tuple은 type으로 많이 한다고 함.
+  "politics" | "economy" | "society" | "culture" | "sports";
 
 export interface NewsItem {
   title: string;
