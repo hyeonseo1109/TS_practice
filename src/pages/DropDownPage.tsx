@@ -1,9 +1,9 @@
-import { DropDown, type DropDownProps } from "./dropDown";
+import { DropDown, type DropDownProps } from "../commonComponent/dropDown";
 import { RiBookLine } from "react-icons/ri";
 import { IoIosCode } from "react-icons/io";
 import { RiPaletteLine } from "react-icons/ri";
 
-export default function MainPage() {
+export default function DropDownPage() {
   const dummyData1: DropDownProps = {
     title: "기본 드롭다운",
     placeholder: "옵션을 선택하세요",
