@@ -1,11 +1,13 @@
+import type { QuizResponse } from "./api/types/externalInterface";
+import type { User } from "./api/types/userInterface";
 import "./App.css";
-import type { QuizResponse, User } from "./type";
 
 function App() {
-  const users: User[] = [
-    { id: 1, name: "홍길동", email: "hong@test.com" },
-    { id: 2, name: "김철수", email: "kim@test.com" },
-    { id: 3, name: "이영희", email: "lee@test.com" },
+  type MiniUser = Pick<User, "id" | "username" | "email">;
+  const users: MiniUser[] = [
+    { id: 1, username: "홍길동", email: "hong@test.com" },
+    { id: 2, username: "김철수", email: "kim@test.com" },
+    { id: 3, username: "이영희", email: "lee@test.com" },
   ];
 
   const response: QuizResponse = {
@@ -23,7 +25,7 @@ function App() {
       <h1>유저 목록</h1>
       {users.map((user) => (
         <div key={user.id}>
-          {user.name} - {user.email}
+          {user.username} - {user.email}
         </div>
       ))}
     </>

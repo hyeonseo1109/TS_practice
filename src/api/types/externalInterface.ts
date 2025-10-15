@@ -22,3 +22,15 @@ export interface Weather {
   weather_icon: string;
   description: string;
 }
+
+export interface QuizData {
+  id: number;
+  question: string | null;
+  options: string[];
+  answer: string | null;
+}
+
+export interface QuizResponse {
+  success: boolean;
+  data: QuizData;
+}
