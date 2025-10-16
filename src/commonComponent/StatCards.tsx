@@ -1,5 +1,5 @@
-import { FaArrowDown } from "react-icons/fa6";
-import { FaArrowUp } from "react-icons/fa6";
+import { ArrowDown } from "lucide-react";
+import { ArrowUp } from "lucide-react";
 import { BsPeople } from "react-icons/bs";
 
 export interface StatCardProps {
@@ -25,12 +25,11 @@ export default function StatCards({
           <p className="text-[1.875rem] font-extrabold">{headCount}</p>
           {percentage > 0 ? (
             <p className="text-[.875rem] text-success-600 flex items-center gap-1">
-              <FaArrowUp size={15} color="color-success-600" /> +{percentage}%
-              증가
+              <ArrowUp size={15} /> +{percentage}% 증가
             </p>
           ) : percentage < 0 ? (
             <p className="text-[.875rem] text-danger-600 flex items-center gap-1">
-              <FaArrowDown size={15} /> {percentage}% 감소
+              <ArrowDown size={15} /> {percentage}% 감소
             </p>
           ) : (
             <p className="text-[.875rem] text-gray-400">

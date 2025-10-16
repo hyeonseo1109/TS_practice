@@ -1,8 +1,8 @@
 import "../App.css";
-import { VscChromeClose } from "react-icons/vsc";
-import { FaAngleDown } from "react-icons/fa";
+import { X } from "lucide-react";
 import { useState } from "react";
-import { FaAngleUp } from "react-icons/fa";
+import { ChevronDown } from "lucide-react";
+import { ChevronUp } from "lucide-react";
 
 interface Option {
   text: string;
@@ -55,7 +55,7 @@ export function DropDown({
       >
         <div className="flex items-start justify-between w-full">
           <p className="font-[500] text-[1.125rem] text-center">{title}</p>
-          <span>{xButton && <VscChromeClose />}</span>
+          <span>{xButton && <X />}</span>
         </div>
         <div
           tabIndex={0}
@@ -74,9 +74,9 @@ export function DropDown({
               {selectedOption || placeholder}
             </p>
             {dropDownState ? (
-              <FaAngleUp size={15} color="gray" />
+              <ChevronUp size={15} color="gray" />
             ) : (
-              <FaAngleDown size={15} color="gray" />
+              <ChevronDown size={15} color="gray" />
             )}
           </div>
           {dropDownState && (
