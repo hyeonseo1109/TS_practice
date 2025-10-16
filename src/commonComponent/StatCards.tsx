@@ -1,6 +1,6 @@
 import { ArrowDown } from "lucide-react";
 import { ArrowUp } from "lucide-react";
-import { BsPeople } from "react-icons/bs";
+import { UsersRound } from "lucide-react";
 
 export interface StatCardProps {
   title: string;
@@ -38,7 +38,7 @@ export default function StatCards({
           )}
         </div>
         <div className="bg-primary-100 w-[3rem] h-[3rem] rounded-full flex self-center text-primary-600 items-center justify-center">
-          <BsPeople size={25} />
+          <UsersRound size={25} />
         </div>
       </div>
     </>

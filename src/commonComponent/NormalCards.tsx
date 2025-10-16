@@ -19,7 +19,7 @@ export default function NormalCards({
         <p className="text-[1.125rem] font-bold">{title}</p>
         <p className="[word-break:keep-all]">{description}</p>
         <div className="flex justify-end">
-          <Button children={"더보기"} size="sm" />
+          <Button size="sm">더보기</Button>
         </div>
       </div>
     </>
