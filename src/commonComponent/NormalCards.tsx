@@ -1,6 +1,7 @@
 import { Button } from "./Button";
 
 export interface NormalCardProps {
+  id: number;
   title: string;
   description: string;
   size?: string;

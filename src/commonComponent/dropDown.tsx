@@ -1,8 +1,6 @@
 import "../App.css";
-import { X } from "lucide-react";
+import { X, ChevronDown, ChevronUp } from "lucide-react";
 import { useState } from "react";
-import { ChevronDown } from "lucide-react";
-import { ChevronUp } from "lucide-react";
 
 interface Option {
   text: string;
