@@ -1,7 +1,6 @@
 import { ArrowDown, ArrowUp, UsersRound } from "lucide-react";
 
 export interface StatCardProps {
-  id: number;
   title: string;
   headCount: number;
   percentage: number;
