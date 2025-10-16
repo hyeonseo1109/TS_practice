@@ -1,7 +1,7 @@
 import { DropDown, type DropDownProps } from "../commonComponent/dropDown";
-import { RiBookLine } from "react-icons/ri";
-import { IoIosCode } from "react-icons/io";
-import { RiPaletteLine } from "react-icons/ri";
+import { Book } from "lucide-react";
+import { Code } from "lucide-react";
+import { Palette } from "lucide-react";
 
 export default function DropDownPage() {
   const dummyData1: DropDownProps = {
@@ -14,9 +14,14 @@ export default function DropDownPage() {
     title: "아이콘 드롭다운",
     placeholder: "카테고리를 선택하세요",
     options: [
-      { text: "스터디", icon: <RiBookLine /> },
-      { text: "프로젝트", icon: <IoIosCode /> },
-      { text: "취미", icon: <RiPaletteLine /> },
+      { text: "스터디", icon: <Book /> },
+      { text: "프로젝트", icon: <Code /> },
+      { text: "취미", icon: <Palette /> },
+      { text: "111", icon: <Palette /> },
+      { text: "222", icon: <Palette /> },
+      { text: "333", icon: <Palette /> },
+      { text: "444", icon: <Palette /> },
+      { text: "555", icon: <Palette /> },
     ],
     xButton: true,
   };

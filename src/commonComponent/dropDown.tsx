@@ -81,7 +81,7 @@ export function DropDown({
           </div>
           {dropDownState && (
             <div
-              className={`bg-white border-[.0938rem] border-gray-200 rounded-lg shadow-[0_0.25rem_0.5rem_#00000020] absolute top-[${currentSize.height}] ${currentSize.dropDown} `}
+              className={`bg-white border-[.0938rem] border-gray-200 rounded-lg shadow-[0_0.25rem_0.5rem_#00000020] absolute top-[${currentSize.height}] ${currentSize.dropDown} max-h-[12rem] overflow-y-auto overflow-x-hidden z-10`}
             >
               {options?.map((option) => (
                 <div
