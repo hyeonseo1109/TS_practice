@@ -32,6 +32,12 @@ export function useSimpleMutation<
     invalidateKeys?: string[];
     onSuccess?: (data: T, variables: TVariables) => void;
     onError?: (error: TError) => void;
+    onSettled?: (
+      //실패해도 무조건 실행
+      data: T | undefined,
+      error: TError | null,
+      variables: TVariables
+    ) => void;
   }
 ) {
   const queryClient = useQueryClient();
@@ -47,5 +53,8 @@ export function useSimpleMutation<
       mutationOptions.onSuccess?.(data, variables);
     },
     onError: mutationOptions.onError,
+    onSettled: (data, error, variables) => {
+      mutationOptions.onSettled?.(data, error, variables);
+    },
   });
 }
