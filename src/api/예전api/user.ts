@@ -1,11 +1,11 @@
 // import type { User } from "../type";
 import { api } from "./client";
-import { useSimpleMutation, useSimpleQuery } from "./queryHelper";
+import { useSimpleMutation, useSimpleQuery } from "../queryHelper";
 import type {
   UpdateProfilePayload,
   User,
   UserLocation,
-} from "./types/userInterface";
+} from "../types/userInterface";
 
 const MY_PROFILE = "myProfile";
 const MY_LOCATION = "myLocation";
